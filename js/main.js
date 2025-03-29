@@ -140,6 +140,7 @@ class loader extends Phaser.Scene {
     this.load.image('mud','assets/food/Mud.png');
     this.load.image('oil','assets/food/Oil.png');
     this.load.image('scratch','assets/food/Scratch.png');
+    this.load.image('panel','assets/food/panel_1.png');
     
 
 
@@ -264,14 +265,17 @@ constructor() {
 /////////////////////////////////////////////////////
 
     this.selt_bg1 = this.add.sprite(0,0, "selt_bg1").setOrigin(0,0);
-    this.truck = this.add.sprite(0,0, "truck").setOrigin(0.5,0.5);
-    this.wheel = this.add.sprite(0,0, "wheel").setOrigin(0.5,0.5);
-    this.mud = this.add.sprite(0,0, "mud").setOrigin(0.5,0.5);
-    this.oil = this.add.sprite(0,0, "oil").setOrigin(0.5,0.5);
-    this.scratch = this.add.sprite(0,0, "scratch").setOrigin(0.5,0.5);
+   this.truck = this.add.image(30,150, "truck").setOrigin(0,0);
+    
+    //this.wheel.setVisible(true);
+    this.mud = this.add.sprite(650,270, "mud").setOrigin(0.5,0.5);
+    this.oil = this.add.sprite(650,270, "oil").setOrigin(0.5,0.5);
+    this.scratch = this.add.sprite(650,270, "scratch").setOrigin(0.5,0.5);
+    this.wheel = this.add.sprite(650,270, "wheel").setOrigin(0.5,0.5);
+    this.panel = this.add.sprite(720,300, "panel").setOrigin(0.5,0.5);
     this.levelGroup.add(this.selt_bg1);
 
-console.log(this.selt_bg1);    
+console.log(this.wheel);    
 
 ////////////////
 

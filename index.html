@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="YYGGAMES" content=" the game is powered by YYG">
+    <title>Cook Baked Dishes And Desserts</title>
+	<!--<script type="text/javascript" src="https://h5gamessdk.yyggames.com/sdk/YYGGames.js"></script>-->
+    <script src="./js/phaser.min.js"></script>
+    <style>
+         body {
+            margin: 0;
+            padding: 0;
+            background-color:#b8175f;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        @media (orientation: portrait) {
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+            }
+           
+        }
+
+    #game-container {
+                margin: 0;
+                padding: 0;
+                background-color: #b8175f;
+                overflow: hidden;
+                width: 100%;
+                height: 100%;
+            }
+    </style>
+    <script>
+        document.onkeydown = function (e) {
+
+            if (e.keyCode == 123) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                return false;
+            }
+        }
+
+    </script>
+   <!-- <link rel='canonical' href='https://www.babygames.com/Cook-Baked-Dishes-And-Desserts'/>-->
+</head>
+<body>
+   <div id="game-container"></div>
+    <script src="./js/main.js"></script>
+   <!-- <script src="./js/relatedgames.js"></script> -->
+    <!-- <script src="./js/functions.js"></script>-->
+
+</body>
+</html>
+
+

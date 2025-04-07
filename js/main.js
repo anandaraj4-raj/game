@@ -137,12 +137,37 @@ class loader extends Phaser.Scene {
     
     this.load.image('truck','assets/food/truck.png');
     this.load.image('wheel','assets/food/Wheel.png');
-    this.load.image('mud','assets/food/Mud.png');
+    this.load.image('wheel_n','assets/food/Wheel_n.png');
+    this.load.image('wheel_new','assets/food/Wheel_n1.png');
+    this.load.image('mud','assets/food/mud1.png');
+    this.load.image('water','assets/food/water_1.png');
     this.load.image('oil','assets/food/Oil.png');
+    this.load.image('oil_1','assets/food/oil_1.png');
+    this.load.image('oil_2','assets/food/oil_2.png');
+    this.load.image('oil_3','assets/food/oil_3.png');
+    this.load.image('oil_4','assets/food/oil_4.png');
     this.load.image('scratch','assets/food/Scratch.png');
-    this.load.image('panel','assets/food/panel_1.png');
+    this.load.image('scratch_1','assets/food/scratch_1.png');
+    this.load.image('scratch_2','assets/food/scratch_2.png');
+    this.load.image('scratch_3','assets/food/scratch_3.png');
+    this.load.image('scratch_4','assets/food/scratch_4.png');
+    this.load.image('panel','assets/food/panel_back.png');
+    this.load.image('towel_p','assets/food/towel_p.png');
+    this.load.image('brush_p','assets/food/brush_p.png');
+    this.load.image('brush_p2','assets/food/brush_p2.png');
+    this.load.image('brush_p3','assets/food/brush_p3.png');
+    this.load.image('gun_p','assets/food/gun_p.png');
+    this.load.image('paint_p','assets/food/paint_p.png');
+    this.load.image('wheel_p','assets/food/wheel_p.png');
+    this.load.image('bubble','assets/food/bubble.png');
+    this.load.image('bubble_1','assets/food/bubble_1.png');
+    this.load.image('bubble_2','assets/food/bubble_2.png');
+    this.load.image('bubble_3','assets/food/bubble_3.png');
+    this.load.image('bubble_4','assets/food/bubble_4.png');
     
-
+    this.load.atlas("Arrow_Right", 'assets/food/Arrow_R.png', 'assets/food/Arrow_R.json');
+    this.load.atlas("Arrow_Left", 'assets/food/Arrow_L.png', 'assets/food/Arrow_L.json');
+    this.load.atlas("water_gun", 'assets/food/water_g.png', 'assets/food/water_g.json');
 
 
 
@@ -268,40 +293,352 @@ constructor() {
    this.truck = this.add.image(30,150, "truck").setOrigin(0,0);
     
     //this.wheel.setVisible(true);
-    this.mud = this.add.sprite(650,270, "mud").setOrigin(0.5,0.5);
-    this.oil = this.add.sprite(650,270, "oil").setOrigin(0.5,0.5);
-    this.scratch = this.add.sprite(650,270, "scratch").setOrigin(0.5,0.5);
-    this.wheel = this.add.sprite(650,270, "wheel").setOrigin(0.5,0.5);
+    this.mud = this.add.sprite(355,360, "mud").setOrigin(0.5,0.5);
+    this.water = this.add.sprite(360,350, "water").setOrigin(0.5,0.5);
+    this.water.setVisible(false);
+    //this.mud_1 = this.add.sprite(640,270, "mud").setOrigin(0.5,0.5);
+    //this.bubble = this.add.sprite(640,270, "bubble").setOrigin(0.5,0.5);
+    //this.oil = this.add.sprite(650,270, "oil").setOrigin(0.5,0.5);
+    this.oil_1 = this.add.sprite(615,350, "oil_1").setOrigin(0.5,0.5);
+    this.oil_2 = this.add.sprite(400,300, "oil_2").setOrigin(0.5,0.5);
+    this.oil_3 = this.add.sprite(310,450, "oil_3").setOrigin(0.5,0.5);
+    this.oil_4 = this.add.sprite(110,400, "oil_4").setOrigin(0.5,0.5);
+    //this.scratch = this.add.sprite(650,270, "scratch").setOrigin(0.5,0.5);
+    this.scratch_1 = this.add.sprite(495,410, "scratch_1").setOrigin(0.5,0.5);
+    this.scratch_2 = this.add.sprite(290,287, "scratch_2").setOrigin(0.5,0.5);
+    this.scratch_3 = this.add.sprite(470,220, "scratch_3").setOrigin(0.5,0.5);
+    this.scratch_4 = this.add.sprite(120,290, "scratch_4").setOrigin(0.5,0.5);
+    this.wheel = this.add.sprite(367,492, "wheel").setOrigin(0.5,0.5);
+    this.wheel_n = this.add.sprite(545,490, "wheel_n").setOrigin(0.5,0.5);
+    this.bubble_1 = this.add.sprite(140,335, "bubble_1").setOrigin(0.5,0.5);
+    this.bubble_2 = this.add.sprite(285,335, "bubble_2").setOrigin(0.5,0.5);
+    this.bubble_3 = this.add.sprite(445,335, "bubble_3").setOrigin(0.5,0.5);
+    this.bubble_4 = this.add.sprite(570,335, "bubble_4").setOrigin(0.5,0.5);
+    this.bubble_1.setVisible(false);
+    this.bubble_1.alpha=0;
+    this.bubble_2.setVisible(false);
+    this.bubble_2.alpha=0;
+    this.bubble_3.setVisible(false);
+    this.bubble_3.alpha=0;
+    this.bubble_4.setVisible(false);
+    this.bubble_4.alpha=0;
     this.panel = this.add.sprite(720,300, "panel").setOrigin(0.5,0.5);
+    this.towel_p = this.add.sprite(723,179, "towel_p").setOrigin(0.5,0.5);
+    this.gun_p = this.add.sprite(723,349, "gun_p").setOrigin(0.5,0.5);
+    this.brush_p = this.add.sprite(723,269, "brush_p").setOrigin(0.5,0.5);
+    this.brush_p2 = this.add.sprite(723,419, "brush_p2").setOrigin(0.5,0.5);
+
+    this.Arrow_Right = this.add.sprite(650,180, "Arrow_Right");
+    this.Arrow_Left = this.add.sprite(130,420, "Arrow_Left");
+    this.water_gun = this.add.sprite(530,220, "water_gun");
+    this.water_gun.setVisible(false);
+    this.Arrow_Left.setVisible(false);
+
+    this.Arrow_Right_aniFrame = this.anims.generateFrameNames('Arrow_Right', {start: 10000,end: 10013,zeroPad: 1,
+        prefix: 'arrow instance '});
+    this.anims.create({key: 'Arrow_right_key',frames: this.Arrow_Right_aniFrame,frameRate:15,repeat: -1});
+
+    this.Arrow_Left_aniFrame = this.anims.generateFrameNames('Arrow_Left', {start: 10000,end: 10013,zeroPad: 1,
+        prefix: 'arrow instance '});
+    this.anims.create({key: 'Arrow_left_key',frames: this.Arrow_Left_aniFrame,frameRate:15,repeat: -1});
+
+
+    this.water_gun_aniFrame = this.anims.generateFrameNames('water_gun', {start: 10000,end: 10009,zeroPad: 1,
+        prefix: 'Water instance '});
+    this.anims.create({key: 'water_gun_key',frames: this.water_gun_aniFrame,frameRate:15,repeat: -1});
+
     this.levelGroup.add(this.selt_bg1);
 
-console.log(this.wheel);    
+//console.log(this.wheel);  
+/*this.brush_p3 = this.add.sprite(720,208, "brush_p3").setOrigin(0.5,0.5);
+this.wheel_p = this.add.sprite(722,297, "wheel_p").setOrigin(0.5,0.5);
+this.paint_p = this.add.sprite(722,407, "paint_p").setOrigin(0.5,0.5); */ 
 
+ var tool_2X = [[100,415],[100,400],[110,400],[90,400],[90,390],[120,400],[130,400],[90,380]];
+
+    if(this.hitCircle){
+        this.hitCircle(tool_2X,5);  
+    }
+         
+        this.hitSprite_tool_2_count = 0;
+
+        this.dragCircle_tool_2 = this.add.graphics();
+        this.dragCircle_tool_2.fillStyle(0x000000, 2);
+        this.dragCircle_tool_2.fillCircle(0, 0, 5);
+        this.physics.add.existing(this.dragCircle_tool_2);
+        this.physics.add.collider(this.dragCircle_tool_2, this.hitGroup_tool_2, hitSprite_group_tool_2, null, this);
+    
+function hitSprite_group_tool_2(dragCircle_tool_2, hitCircle_tool_2) {
+const distance = Phaser.Math.Distance.Between(dragCircle_tool_2.x, dragCircle_tool_2.y, hitCircle_tool_2.x, hitCircle_tool_2.y);
+//console.log(distance)
+if (distance <= 5) {
+    const stepsize=1/ tool_2X.length;
+console.log(stepsize)
+if(this.oil_4.visible){
+    this.oil_4.alpha-=stepsize;
+
+}
+if(this.oil_3.visible&&this.Arrow_Left.x==350){
+    this.oil_3.alpha-=stepsize;
+
+}
+if(this.oil_2.visible&&this.Arrow_Left.x==470){
+    this.oil_2.alpha-=stepsize;
+
+}
+if(this.oil_1.visible&&this.Arrow_Left.x==650){
+    this.oil_1.alpha-=stepsize;
+
+}
+if(this.Arrow_Left.x==200){
+    this.bubble_1.setVisible(true)
+    this.bubble_1.alpha+=stepsize;
+}
+if(this.Arrow_Left.x==400){
+    this.bubble_2.setVisible(true)
+    this.bubble_2.alpha+=stepsize;
+
+}
+if(this.Arrow_Left.x==550){
+    this.bubble_3.setVisible(true)
+    this.bubble_3.alpha+=stepsize;
+
+}
+if(this.Arrow_Left.x==640){
+    this.bubble_4.setVisible(true)
+    this.bubble_4.alpha+=stepsize;
+
+}
+if(this.Arrow_Left.x==645){
+    this.bubble_1.alpha-=stepsize;
+    this.bubble_2.alpha-=stepsize;
+    this.bubble_3.alpha-=stepsize;
+    this.bubble_4.alpha-=stepsize;
+    this.mud.alpha-=stepsize;
+}
+if(this.Arrow_Left.x==643){
+this.water.alpha-=stepsize;
+}
+        this.circle_tool_2.fillCircle(hitCircle_tool_2.x, hitCircle_tool_2.y, 6);
+        hitCircle_tool_2.destroy();
+        this.hitSprite_tool_2_count++;
+        if (this.hitSprite_tool_2_count >= tool_2X.length) {
+this.circle_tool_2.destroy();
+this.hitSprite_tool_2_count=0;
+if(this.oil_4.alpha==0&&this.oil_3.alpha!=0&&this.oil_2.alpha!=0&&this.oil_1.alpha!=0){
+    this.oil_4.setVisible(false);
+    this.Arrow_Left.x=350;
+    this.Arrow_Left.y=450;
+    tool_2X=[[310,420],[300,420],[310,430],[300,440],[290,420],[290,440],[290,430],[290,450]]
+    this.hitCircle(tool_2X,5);
+    this.physics.add.collider(this.dragCircle_tool_2, this.hitGroup_tool_2, hitSprite_group_tool_2, null, this);
+}
+if(this.oil_4.alpha==0&&this.oil_3.alpha==0&&this.oil_2.alpha!=0&&this.oil_1.alpha!=0){
+    this.oil_3.setVisible(false);
+    this.Arrow_Left.x=470;
+    this.Arrow_Left.y=320;
+    tool_2X=[[400,290],[420,290],[410,290],[430,300],[400,300],[390,300],[380,290],[390,310]]
+    this.hitCircle(tool_2X,5);
+    this.physics.add.collider(this.dragCircle_tool_2, this.hitGroup_tool_2, hitSprite_group_tool_2, null, this);
+}
+if(this.oil_4.alpha==0&&this.oil_3.alpha==0&&this.oil_2.alpha==0&&this.oil_1.alpha!=0){
+    this.oil_2.setVisible(false);
+    this.Arrow_Left.x=650;
+    this.Arrow_Left.y=390;
+    tool_2X=[[610,360],[610,350],[610,370],[620,360],[620,340],[630,360],[630,350],[630,340]]
+    this.hitCircle(tool_2X,5);
+    this.physics.add.collider(this.dragCircle_tool_2, this.hitGroup_tool_2, hitSprite_group_tool_2, null, this);
+}
+if(this.oil_4.alpha==0&&this.oil_3.alpha==0&&this.oil_2.alpha==0&&this.oil_1.alpha==0&&this.bubble_1.alpha==0&&this.mud.alpha==1){
+    this.oil_1.setVisible(false);
+    tool_2X = [[120,400],[120,370],[150,300],[150,360],[150,320]];
+    this.hitCircle(tool_2X,25);
+    this.physics.add.collider(this.dragCircle_tool_2, this.hitGroup_tool_2, hitSprite_group_tool_2, null, this);
+
+}
+if(this.bubble_1.visible==true&&this.bubble_2.visible!=true&&this.bubble_3.visible!=true&&this.bubble_4.visible!=true){
+    this.Arrow_Left.x=400;
+    this.Arrow_Left.y=370;
+    tool_2X = [[220,400],[220,370],[250,300],[250,360],[250,320]];
+    this.hitCircle(tool_2X,25);
+    this.physics.add.collider(this.dragCircle_tool_2, this.hitGroup_tool_2, hitSprite_group_tool_2, null, this);
+
+}
+if(this.bubble_1.visible==true&&this.bubble_2.visible==true&&this.bubble_3.visible!=true&&this.bubble_4.visible!=true){
+    this.Arrow_Left.x=550;
+    this.Arrow_Left.y=370;
+    tool_2X = [[370,400],[370,370],[400,300],[400,360],[400,320]];
+    this.hitCircle(tool_2X,25);
+    this.physics.add.collider(this.dragCircle_tool_2, this.hitGroup_tool_2, hitSprite_group_tool_2, null, this);
+
+}
+if(this.bubble_1.visible==true&&this.bubble_2.visible==true&&this.bubble_3.visible==true&&this.bubble_4.visible!=true){
+    this.Arrow_Left.x=640;
+    this.Arrow_Left.y=370;
+    tool_2X = [[560,400],[560,370],[590,300],[590,360],[590,320]];
+    this.hitCircle(tool_2X,25);
+    this.physics.add.collider(this.dragCircle_tool_2, this.hitGroup_tool_2, hitSprite_group_tool_2, null, this);
+
+}
+if(this.bubble_1.visible==true&&this.bubble_2.visible==true&&this.bubble_3.visible==true&&this.bubble_4.visible==true&&this.mud.alpha==1){
+    tool_2X = [[150,300],[250,250],[300,350],[350,350],[400,320],[450,320]];
+    this.hitCircle(tool_2X,25);
+    this.physics.add.collider(this.dragCircle_tool_2, this.hitGroup_tool_2, hitSprite_group_tool_2, null, this);
+
+}
+if(this.mud.alpha<1){
+tool_2X = [[150,300],[250,250],[300,350],[350,350],[400,320],[450,320]];
+    this.hitCircle(tool_2X,25);
+    this.physics.add.collider(this.dragCircle_tool_2, this.hitGroup_tool_2, hitSprite_group_tool_2, null, this);
+
+}
+          }
+         }
+        }
 ////////////////
+this.Arrow_Right.play('Arrow_right_key');
+this.towel_p.setInteractive({useHandCursor:true,draggable:true,pixelPerfect:true});
+
+this.towel_p.on('drag', (pointer, dragX, dragY) => {
+    this.towel_p.x = dragX;
+    this.towel_p.y = dragY;
+    //console.log(dragY);
+    this.dragCircle_tool_2.x=dragX;
+    this.dragCircle_tool_2.y=dragY;
+
+    this.Arrow_Right.setVisible(false);
+    this.Arrow_Left.setVisible(true);
+    this.Arrow_Left.play('Arrow_left_key');
+
+});
+this.towel_p.on('dragend', () => {
+     //this.towel_p = this.add.sprite(723,179, "towel_p").setOrigin(0.5,0.5);
+    if((this.oil_1.alpha==0&&this.oil_2.alpha==0&&this.oil_3.alpha==0&&this.oil_4.alpha==0)){
+        ///console.log("end")
+        this.towel_p.disableInteractive();
+        this.Arrow_Left.x=200;
+        this.Arrow_Left.y=370;
+        this.Arrow_Left.setVisible(false);
+
+        this.tweens.add({targets:this.towel_p,x:723,y:179,ease: 'Quadratic',duration:1200,onComplete:() => {
+            this.brush_p.setInteractive({useHandCursor:true,draggable:true,pixelPerfect:true});
+            this.Arrow_Right.setVisible(true);
+            this.Arrow_Right.x=650;
+            this.Arrow_Right.y=270;
+        }
+    
+    },this);
+    }
+},this);
+this.brush_p.on('drag', (pointer, dragX, dragY) => {
+    this.brush_p.x=dragX;
+    this.brush_p.y=dragY;
+    this.dragCircle_tool_2.x=dragX;
+    this.dragCircle_tool_2.y=dragY;
+    this.Arrow_Right.setVisible(false);
+    this.Arrow_Left.setVisible(true);
 
     
-
+});
+this.brush_p.on('dragend', () => {
+    if(this.bubble_1.visible==true&&this.bubble_2.visible==true&&this.bubble_3.visible==true&&this.bubble_4.visible==true){
+        this.brush_p.disableInteractive();
+        this.Arrow_Left.setVisible(false);
+        this.Arrow_Left.x=645;
+        this.Arrow_Left.y=270;
+        this.tweens.add({targets:this.brush_p,x:723,y:269,ease: 'Quadratic',duration:1200,onComplete:() => {
+            this.gun_p.setInteractive({useHandCursor:true,draggable:true,pixelPerfect:true});
+            this.Arrow_Right.setVisible(true);
+            this.Arrow_Right.x=650;
+            this.Arrow_Right.y=370;
+        }
     
+    },this);
+}
+
+},this);
+this.gun_p.on('drag', (pointer, dragX, dragY) => {
+    this.water_gun.setVisible(true);
+    this.Arrow_Right.setVisible(false);
+    this.Arrow_Left.setVisible(true);
+    this.water_gun .setInteractive({useHandCursor:true,draggable:true,pixelPerfect:true});
+    this.gun_p.x=dragX;
+    this.gun_p.y=dragY;
+this.water_gun.play('water_gun_key');
+this.gun_p.alpha=0;
+this.gun_p.disableInteractive();
+});
+
+this.gun_p.on('dragend', () => {
+
+},this);
+
+this.water_gun.on('drag', (pointer, dragX, dragY) => {
+    this.water_gun.x=this.dragCircle_tool_2.x=dragX;
+    this.water_gun.y=this.dragCircle_tool_2.y=dragY;
+});
+
+this.water_gun.on('dragend', () => {
+    if(this.mud.alpha<1){
+        this.mud.setVisible(false);
+        this.water.setVisible(true);
+        this.water_gun.disableInteractive();
+        this.gun_p.disableInteractive();
+        this.water_gun.setVisible(false);
+        this.Arrow_Left.setVisible(false);
+        this.Arrow_Left.x=643;
+        this.Arrow_Left.y=270;
+        this.gun_p.alpha=1;
+        this.tweens.add({targets:this.gun_p,x:723,y:349,ease: 'Quadratic',duration:1200,onComplete:() => {
+            this.brush_p2.setInteractive({useHandCursor:true,draggable:true,pixelPerfect:true});
+            this.Arrow_Right.setVisible(true);
+            this.Arrow_Right.x=650;
+            this.Arrow_Right.y=420;
+        }
+    
+    },this);  
+    }
+},this);
+this.brush_p2.on('drag', (pointer, dragX, dragY) => {
+this.Arrow_Right.setVisible(false);
+    this.Arrow_Left.setVisible(true);
+    this.water_gun .setInteractive({useHandCursor:true,draggable:true,pixelPerfect:true});
+    this.brush_p2.x=this.dragCircle_tool_2.x=dragX;
+    this.brush_p2.y=this.dragCircle_tool_2.y=dragY;
+});
+this.brush_p2.on('dragend', () => {
+if(this.water.alpha<1){
+this.water.setVisible(false);
+        this.Arrow_Left.setVisible(false);
+        this.Arrow_Left.x=665;
+        this.Arrow_Left.y=270;
+        this.tweens.add({targets:this.brush_p2,x:723,y:419,ease: 'Quadratic',duration:1200,onComplete:() => {
+            this.Arrow_Right.setVisible(true);
+            this.Arrow_Right.x=650;
+            this.Arrow_Right.y=230;
+            this.brush_p3 = this.add.sprite(720,208, "brush_p3").setOrigin(0.5,0.5);
+            this.wheel_p = this.add.sprite(722,297, "wheel_p").setOrigin(0.5,0.5);
+            this.paint_p = this.add.sprite(722,407, "paint_p").setOrigin(0.5,0.5);
+            this.towel_p.setVisible(false);
+            this.brush_p2.setVisible(false);
+            this.gun_p.setVisible(false);
+            this.brush_p.setVisible(false);
+            this.brush_p3.setInteractive({useHandCursor:true,draggable:true,pixelPerfect:true});
+
+
+        }
+    },this);
+}
+},this);
+
 /////////////////////////////////////////////////////
 /////////////////////////////////////////////////////
 
-       this.playbtn=this.add.image(1190,640,'btn2').setOrigin(0.5, 0.5).setScale(0);
-        this.playbtn.setInteractive({ useHandCursor: true });
-        this.playbtn.on('pointerover',function(){this.playbtn.setScale(1.05)},this);
-        this.playbtn.on('pointerout',function(){this.playbtn.setScale(1)},this);
-        this.playbtn.on('pointerdown',this.enterRoom,this);
-
-        this.morebtn=this.add.image(60,660,'btn4').setOrigin(0.5, 0.5).setScale(0);
-        this.morebtn.setInteractive({ useHandCursor: true });
-        this.morebtn.on('pointerover',function(){this.morebtn.setScale(1.05)},this);
-        this.morebtn.on('pointerout',function(){this.morebtn.setScale(1)},this);
-        this.morebtn.on('pointerup',this.morebtnLink,this);
-
-         this.logo =this.add.image(165,55,'logo').setScale(0.65);
+        this.logo =this.add.image(165,55,'logo').setScale(0.65);
         this.logo.setInteractive({pixelPerfect:true});
         this.logo.on('pointerup',this.LogoLink,this);
 
-          this.musicBtn = this.add.sprite(1212,50,"music-on");
+        this.musicBtn = this.add.sprite(600,50,"music-on");
         this.musicBtn.setInteractive();
         this.musicBtn.on('pointerup',this.changemusic,this);
 
@@ -321,6 +658,25 @@ console.log(this.wheel);
         this.musicBtn.setTexture('music-off');
         }
 }
+hitCircle (tool_2X,size) {
+    this.hitGroup_tool_2 = this.physics.add.group();
+    for (let i = 0; i < tool_2X.length; i++) {
+            const hitCircle_tool_2 = this.add.graphics();
+            hitCircle_tool_2.fillStyle(0xaaafff, 2);
+            hitCircle_tool_2.fillCircle(0, 0, size);
+            hitCircle_tool_2.x = tool_2X[i][0];
+            hitCircle_tool_2.y = tool_2X[i][1];
+            hitCircle_tool_2.id = i;
+            this.hitGroup_tool_2.add(hitCircle_tool_2);
+            this.physics.add.existing(hitCircle_tool_2);
+        }
+        
+        this.circleGroup_tool_2 = this.add.group();
+        this.circle_tool_2 = this.add.graphics();
+        this.circle_tool_2.fillStyle(0xaaafff, 2);
+        this.circleGroup_tool_2.add(this.circle_tool_2);
+
+    }
 update() {
   // console.log(this.input.x + ':' + this.input.y); 
 
